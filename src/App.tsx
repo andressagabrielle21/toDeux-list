@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <main className='w-100 min-h-screen p-10 bg-[#181824] text-white flex flex-col gap-8 justify-center items-center '> 
+    <main className='w-100 min-h-screen p-10 bg-[#181824] text-white flex flex-col gap-8 justify-center md:items-center'> 
 
       <h1 className='text-left font-bold text-5xl mb-5'>To Deux</h1>
 
@@ -48,7 +48,7 @@ function App() {
 
       <Filter filter={filter} setFilter={setFilter}/>
 
-      {task && <div className='bg-[#25273C] rounded-lg flex flex-col max-md:gap-2 w-[70vw]'>
+      {task && <div className='bg-[#25273C] rounded-lg flex flex-col max-md:gap-2 w-[70vw] max-md:w-full'>
         {task.filter((task) => 
           filter === "All" 
           ? task : filter === "Complete" 

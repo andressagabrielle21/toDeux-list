@@ -1,4 +1,4 @@
-import { useState, KeyboardEvent, ChangeEvent } from "react"
+import { useState, ChangeEvent } from "react"
 import Button from "./Button"
 
 type TaskFieldProps = {
@@ -21,7 +21,7 @@ const TaskField = ({loadTask} : TaskFieldProps) => {
     <div className="bg-[#25273C] py-4 px-5 flex justify-around items-center gap-8 rounded-lg">
       <form className="bg-[#25273C] flex max-md:flex-col justify-around items-center gap-8 w-full" onSubmit={handleSubmit}>
 
-        <input value={task} onChange={(e) => setTask(e.target.value)} placeholder="What to do next?" type="text" className="focus:outline-none md:px-3 text-slate-gray bg-[#25273C] text-lg rounded-lg w-full" />
+        <input value={task} onChange={(e) => setTask(e.target.value)} placeholder="What to do next?" type="text" className="focus:outline-none md:px-3 text-slate-gray bg-[#25273C] text-lg rounded-lg w-30" />
 
         <select value={category} className="bg-[#25273C] max-md:w-full text-sm text-[#ffffff96] focus:outline-none w-30" onChange={(e) => setCategory(e.target.value)}>
           <option value="">Select a category</option>
