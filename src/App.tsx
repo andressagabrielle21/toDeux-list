@@ -11,7 +11,7 @@ type taskTypes = {
 }
 
 function App() {
-  const [task, setTask] = useState<taskTypes | never[]>([])
+  const [task, setTask] = useState<taskTypes[] | never[]>([])
   const [filter, setFilter] = useState("All")
 
   const loadTask = (title: string, category: string) => {
@@ -54,7 +54,10 @@ function App() {
           ? task : filter === "Complete" 
           ? task.isCompleted 
           : !task.isCompleted).map((item) => (
-          <TasksCard completeFunc={completeTask} deleteFunc={deleteTask} id={item.id} key={item.id} taskState={item.isCompleted} title={item.title} category={item.category}/>
+          <TasksCard completeFunc={completeTask} 
+            deleteFunc={deleteTask} id={item.id} 
+            key={item.id} taskState={item.isCompleted} 
+            title={item.title} category={item.category}/>
         ))}
       </div>}
       

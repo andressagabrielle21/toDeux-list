@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react"
+import { useState } from "react"
 import Button from "./Button"
 
 type TaskFieldProps = {
@@ -9,7 +9,7 @@ const TaskField = ({loadTask} : TaskFieldProps) => {
   const [task, setTask] = useState<string>("")
   const [category, setCategory] = useState<string>("")
 
-  const handleSubmit = (e: ChangeEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(!task || !category) return alert("You forgot to fill one of the fields.");
     loadTask(task, category)
@@ -30,7 +30,7 @@ const TaskField = ({loadTask} : TaskFieldProps) => {
           <option value="Study">Study</option>
         </select>
 
-        <Button type="submit" color="purple" label="Add task" size="full" onClick={handleSubmit}/>
+        <Button type="submit" color="purple" label="Add task" size="full"/>
 
       </form>
     </div>

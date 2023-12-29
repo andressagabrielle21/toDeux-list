@@ -2,7 +2,7 @@ type ButtonProp = {
   label: string,
   // disabled: boolean,
   color: "red" | "purple"
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   type: "submit" | undefined
   size: "full" | undefined
 }
